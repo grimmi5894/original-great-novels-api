@@ -45,3 +45,19 @@ CREATE TABLE novelsGenres (
   FOREIGN KEY(novelId) REFERENCES novels(id),
   FOREIGN KEY(genreId) REFERENCES genres(id)
 )
+
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Bram', 'Stoker');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Oscar', 'Wilde');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Alice', 'Walker');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Leo', 'Tolstoy');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Charles', 'Dickens');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Arthur', 'Miller');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Alexandre', 'Dumas');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Arthur Conan', 'Doyle');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Robert Louis', 'Stevenson');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Fyodor', 'Dostoyevsky');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Agatha', 'Christie');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Ray', 'Bradbury');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('George', 'Orwell');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('H.G.', 'Wells');
+INSERT INTO authors (nameFirst, nameLast) VALUES ('Chinua', 'Achebe');
