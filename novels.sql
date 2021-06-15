@@ -35,3 +35,13 @@ CREATE TABLE novels (
   FOREIGN KEY(authorId) REFERENCES authors(id)
 );
 
+CREATE TABLE novelsGenres (
+  novelId INT,
+  genreId INT,
+  createdAt DATETIME DEFAULT NOW(),
+  updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
+  deletedAt DATETIME,
+  PRIMARY KEY(novelId, genreId),
+  FOREIGN KEY(novelId) REFERENCES novels(id),
+  FOREIGN KEY(genreId) REFERENCES genres(id)
+)
