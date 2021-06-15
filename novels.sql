@@ -6,3 +6,11 @@ GRANT ALL novels.* TO 'novels'@'localhost';
 
 USE novels;
 
+CREATE TABLE genres (
+  id INT auto_increment,
+  name VARCHAR(255) NOT NULL,
+  createdAt DATETIME DEFAULT NOW(),
+  updatedAt DATETIME DEFAULT NOW(),
+  deletedAt DATETIME,
+  PRIMARY KEY(id)
+);
