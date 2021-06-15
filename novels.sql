@@ -61,3 +61,20 @@ INSERT INTO authors (nameFirst, nameLast) VALUES ('Ray', 'Bradbury');
 INSERT INTO authors (nameFirst, nameLast) VALUES ('George', 'Orwell');
 INSERT INTO authors (nameFirst, nameLast) VALUES ('H.G.', 'Wells');
 INSERT INTO authors (nameFirst, nameLast) VALUES ('Chinua', 'Achebe');
+
+INSERT INTO novel (title, authorId) VALUES ('Dracula',	1);
+INSERT INTO novel (title, authorId) VALUES ('The Picture of Dorian Gray',	2);
+INSERT INTO novel (title, authorId) VALUES ('The Color Purple',	3);
+INSERT INTO novel (title, authorId) VALUES ('War and Peace',	4);
+INSERT INTO novel (title, authorId) VALUES ('A Tale of Two Cities',	5);
+INSERT INTO novel (title, authorId) VALUES ('The Crucible',	6)
+INSERT INTO novel (title, authorId) VALUES ('The Three Musketeers',	7);
+INSERT INTO novel (title, authorId) VALUES ('The Hound of the Baskervilles', 8);
+INSERT INTO novel (title, authorId) VALUES ('The Strange Case of Dr. Jekyll and Mr. Hyde', 9);
+INSERT INTO novel (title, authorId) VALUES ('Crime and Punishment',	10);
+INSERT INTO novel (title, authorId) VALUES ('Murder on the Orient Express',	11);
+INSERT INTO novel (title, authorId) VALUES ('Fahrenheit 451',	12);
+INSERT INTO novel (title, authorId) VALUES ('Animal Farm',	13);
+INSERT INTO novel (title, authorId) VALUES ('The Time Machine',	14);
+INSERT INTO novel (title, authorId) VALUES ('Things Fall Apart',	15);
+
