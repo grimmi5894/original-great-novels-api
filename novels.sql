@@ -78,3 +78,22 @@ INSERT INTO novels (title, authorId) VALUES ('Animal Farm',	13);
 INSERT INTO novels (title, authorId) VALUES ('The Time Machine',	14);
 INSERT INTO novels (title, authorId) VALUES ('Things Fall Apart',	15);
 
+INSERT INTO genres (name) VALUES ('Adventure');
+INSERT INTO genres (name) VALUES ('African Literature');
+INSERT INTO genres (name) VALUES ('Crime');
+INSERT INTO genres (name) VALUES ('Drama');
+INSERT INTO genres (name) VALUES ('Dystopia');
+INSERT INTO genres (name) VALUES ('Fantasy');
+INSERT INTO genres (name) VALUES ('Fiction');
+INSERT INTO genres (name) VALUES ('French Literature');
+INSERT INTO genres (name) VALUES ('Gothic');
+INSERT INTO genres (name) VALUES ('Historical Fiction');
+INSERT INTO genres (name) VALUES ('Horror');
+INSERT INTO genres (name) VALUES ('Mystery');
+INSERT INTO genres (name) VALUES ('Plays');
+INSERT INTO genres (name) VALUES ('Russian Literature');
+INSERT INTO genres (name) VALUES ('Science Fiction');
+INSERT INTO genres (name) VALUES ('Thriller');
+INSERT INTO genres (name) VALUES ('Time Travel');
+INSERT INTO genres (name) VALUES ('War');
+
