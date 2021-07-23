@@ -2,7 +2,7 @@ CREATE DATABASE novels;
 
 CREATE USER 'novels'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password123';
 
-GRANT ALL novels.* TO 'novels'@'localhost';
+GRANT ALL ON novels.* TO 'novels'@'localhost';
 
 USE novels;
 
@@ -28,6 +28,7 @@ CREATE TABLE authors (
 CREATE TABLE novels (
   id INT auto_increment,
   title VARCHAR(255) NOT NULL,
+  authorId INT,
   createdAt DATETIME DEFAULT NOW(),
   updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
   deletedAt DATETIME,
@@ -44,7 +45,7 @@ CREATE TABLE novelsGenres (
   PRIMARY KEY(novelId, genreId),
   FOREIGN KEY(novelId) REFERENCES novels(id),
   FOREIGN KEY(genreId) REFERENCES genres(id)
-)
+);
 
 INSERT INTO authors (nameFirst, nameLast) VALUES ('Bram', 'Stoker');
 INSERT INTO authors (nameFirst, nameLast) VALUES ('Oscar', 'Wilde');
@@ -67,7 +68,7 @@ INSERT INTO novels (title, authorId) VALUES ('The Picture of Dorian Gray',	2);
 INSERT INTO novels (title, authorId) VALUES ('The Color Purple',	3);
 INSERT INTO novels (title, authorId) VALUES ('War and Peace',	4);
 INSERT INTO novels (title, authorId) VALUES ('A Tale of Two Cities',	5);
-INSERT INTO novels (title, authorId) VALUES ('The Crucible',	6)
+INSERT INTO novels (title, authorId) VALUES ('The Crucible',	6);
 INSERT INTO novels (title, authorId) VALUES ('The Three Musketeers',	7);
 INSERT INTO novels (title, authorId) VALUES ('The Hound of the Baskervilles', 8);
 INSERT INTO novels (title, authorId) VALUES ('The Strange Case of Dr. Jekyll and Mr. Hyde', 9);
@@ -97,52 +98,52 @@ INSERT INTO genres (name) VALUES ('Thriller');
 INSERT INTO genres (name) VALUES ('Time Travel');
 INSERT INTO genres (name) VALUES ('War');
 
-INSERT INTO novelsGenres (novelId, genreId) VALUES (1,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (1, 11);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (1,6);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (2,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (2, 11);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (2, 9);	
+INSERT INTO novelsGenres (novelId, genreId) VALUES (1,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (1, 11);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (1, 6);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (2,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (2, 11);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (2, 9);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (2, 6);
-INSERT INTO novelsGenres (novelId, genreId) VALUES (3,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (3, 10);		
-INSERT INTO novelsGenres (novelId, genreId) VALUES (4,	7);	
+INSERT INTO novelsGenres (novelId, genreId) VALUES (3,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (3, 10);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (4,	7);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (4, 10);
-INSERT INTO novelsGenres (novelId, genreId) VALUES (4, 18);	
+INSERT INTO novelsGenres (novelId, genreId) VALUES (4, 18);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (4, 14);
-INSERT INTO novelsGenres (novelId, genreId) VALUES (5,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (5, 10);		
-INSERT INTO novelsGenres (novelId, genreId) VALUES (6,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (6, 10);	
+INSERT INTO novelsGenres (novelId, genreId) VALUES (5,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (5, 10);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (6,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (6, 10);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (6, 4);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (6, 13);
-INSERT INTO novelsGenres (novelId, genreId) VALUES (7,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (7, 10);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (7, 1);	
+INSERT INTO novelsGenres (novelId, genreId) VALUES (7,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (7, 10);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (7, 1);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (7, 8);
-INSERT INTO novelsGenres (novelId, genreId) VALUES (8,	7);	
+INSERT INTO novelsGenres (novelId, genreId) VALUES (8, 7);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (8, 12);
-INSERT INTO novelsGenres (novelId, genreId) VALUES (8, 3);	
+INSERT INTO novelsGenres (novelId, genreId) VALUES (8, 3);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (8, 16);
-INSERT INTO novelsGenres (novelId, genreId) VALUES (9,	7	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (9, 12);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (9, 15);	
+INSERT INTO novelsGenres (novelId, genreId) VALUES (9,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (9, 12);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (9, 15);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (9, 11);
-INSERT INTO novelsGenres (novelId, genreId) VALUES (10,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (10, 14);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (10, 12);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (11,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (11, 12);		
-INSERT INTO novelsGenres (novelId, genreId) VALUES (12,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (12, 15);	
+INSERT INTO novelsGenres (novelId, genreId) VALUES (10,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (10, 14);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (10, 12);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (11,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (11, 12);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (12,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (12, 15);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (12, 5);
-INSERT INTO novelsGenres (novelId, genreId) VALUES (13,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (13, 15);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (13, 5);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (14,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (14, 15);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (14, 17);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (15,	7);	
-INSERT INTO novelsGenres (novelId, genreId) VALUES (15, 10);	
+INSERT INTO novelsGenres (novelId, genreId) VALUES (13,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (13, 15);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (13, 5);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (14,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (14, 15);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (14, 17);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (15,	7);
+INSERT INTO novelsGenres (novelId, genreId) VALUES (15, 10);
 INSERT INTO novelsGenres (novelId, genreId) VALUES (15, 2);
 
